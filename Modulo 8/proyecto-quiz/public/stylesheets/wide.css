@@ -1,0 +1,39 @@
+body {
+	background: #999; 
+}
+
+
+#page-wrap {
+   	display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-wrap: wrap;
+   	flex-wrap: wrap;
+}
+
+
+nav       {
+	float: left;
+	width: 15%;
+}
+
+
+header, footer {
+	width: 100%;
+}
+
+
+nav li  {
+	/*margin: 0px 100px 0px 0px;*/
+	float: none;
+	width:100%;
+}
+
+
+section   {
+	width: 85%;
+}
+
+
+footer    {
+	clear: both;  display: block;
+}

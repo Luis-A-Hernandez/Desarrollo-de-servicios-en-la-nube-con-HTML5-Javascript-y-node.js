@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"><title>Quiz</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link 	rel='stylesheet'
+    		    type ='text/css'
+    		    media='only screen and (min-width: 530px) and (min-device-width: 481px)'
+    		    href='/stylesheets/wide.css' />
+    <link 	rel='stylesheet'
+    		    type ='text/css'
+    		    media='only screen and (max-width: 480px)'
+    		    href='/stylesheets/smartphone.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+  <div id="page-wrap">
+  	<header class="main navbar" id="h1" role="navigator">
+      <% if (!session.user) { %>
+        <span class="pull-right nav">
+          <a class="btn btn-warning navbar-btn" role="button" href="/login">
+            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+           login </a></span>
+      <% } else { %>
+        <form method="POST" action="\login?_method=delete" class="form form-inline pull-right">
+          <button class="btn btn-warning navbar-btn" type="submit">
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+           logout </button>
+        </form>
+        <span class="pull-right navbar-text">Welcome <%= session.user.username %></span>
+      <% } %>
+	  <h1>Quiz<span>: el juego de las preguntas</span></h1>
+    </header>
+    <nav class="main" id="n1" role="navigation">
+      <ul class="nav nav-pills center-block">
+    	 <li class="active"><a href ="/">
+        <span class="glyphicon glyphicon-home pull-left" aria-hidden="true"></span>
+        Inicio </a> </li>
+    	 <li class="active"><a href ="/quizes">
+        <span class="glyphicon glyphicon-question-sign pull-left" aria-hidden="true"></span>
+        Preguntas </a> </li>
+       <li class="active"><a href ="/statistics">
+        <span class="glyphicon glyphicon-stats pull-left" aria-hidden="true"></span>
+        Estadísticas </a> </li>        
+       <li class="active"><a href ="/author">
+        <span class="glyphicon glyphicon-user pull-left" aria-hidden="true"></span>
+        Autor </a> </li>
+      </ul>
+    </nav>
+
+    <section class="main" id="s1">
+      <% if (errors.length) { %>
+        <span id='ErrorMsg'>
+          <!-- Corregir errores:</br>-->
+          <% for (var i in errors) { %>
+            <div class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span>
+              <span> <%= errors[i].message %></span>
+            </div>          
+         <% } %>
+        </span>
+      <% } %>      
+    	<%- body %>
+    </section>
+
+    <footer class="main" id="f1">
+      <div class="pull-right panel-body"><a href="http://es.wikipedia.org/wiki/Quiz">¿Que es un Quiz?</a></p></div>
+      <div class="pull-right panel-body"><a href="https://github.com/Luis-A-Hernandez/proyecto-quiz" target="_blank">Proyecto en GitHub</a></p></div>
+	</footer>
+  <script type="text/javascript">
+  </script>
+</div>
+  </body>
+</html>

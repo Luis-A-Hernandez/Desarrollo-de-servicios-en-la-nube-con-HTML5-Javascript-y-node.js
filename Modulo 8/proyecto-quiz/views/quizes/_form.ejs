@@ -1,0 +1,35 @@
+<div class="form-group">
+	<label for="preg" class="rem pull-left">Pregunta: </label>
+	<input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>" class="form-control"/>
+</div>
+<div class="form-group">
+	<label for="resp" class="rem pull-left">Respuesta: </label>
+	<input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" class="form-control"/>
+</div>
+
+<div class="form-group">
+	<label rel="temaquiz" class="rem pull-left">Temática:</label>
+	<select id="temaquiz" name="quiz[tema]" class="form-control">
+		<option value="otro" 
+	  		<% if (quiz.tema==="otro") { %>selected <% } %>>
+	  		Otro
+  		</option>
+		<option value="humanidades" <% if (quiz.tema==="humanidades") { %>selected <% } %>>
+			Humanidades
+		</option>
+		<option value="ocio" <% if (quiz.tema==="ocio") { %>selected <% } %>>
+			Ocio
+		</option>
+		<option value="ciencia"<% if (quiz.tema==="ciencia") { %>selected <% } %>>
+			Ciencia
+		</option>
+		<option value="tecnologia"<% if (quiz.tema==="tecnologia") { %>selected <% } %>>
+			Tecnología
+		</option>
+	</select>
+</div>	
+	
+<div>
+	<a href="/quizes"  class="btn btn-danger">Cancelar</a>
+	<input type="submit" value="Guardar" class="btn btn-success">
+</div>

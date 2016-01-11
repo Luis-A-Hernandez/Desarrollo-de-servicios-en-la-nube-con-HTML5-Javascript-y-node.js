@@ -1,0 +1,65 @@
+* {
+	margin: 0px;
+	padding: 0px; 
+}
+
+body {
+	font: 16px Georgia, serif;
+}
+
+#ErrorMsgs {
+	color: #f61;
+	font-size: smaler;
+}
+
+#page-wrap {
+	/*margin: 2% auto;*/
+	color: white;
+}
+
+#page-wrap > .main {
+	border: 1px solid #999;
+	padding: 1%; 
+	margin-bottom: 1px;
+	color: black;
+}
+
+#searcher {
+	
+}
+
+#quizList {
+	text-align: center;
+}
+
+#quizList table{
+	margin: 0 auto;
+	text-align: left;
+}
+
+section > div {
+	padding: 20px;
+}
+
+header, nav, section {
+	background: #eee;
+	text-align: center;
+}
+
+footer {
+	background: #eee;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	width: 100%;
+}
+
+li {
+	margin: 10px 0px 10px 0px;
+}
+
+.width50 {
+	max-width: 50%;
+}

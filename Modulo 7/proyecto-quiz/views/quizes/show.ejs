@@ -1,0 +1,23 @@
+
+  <form method="get" action="/quizes/<%= quiz.id %>/answer" class="form form-edit center-block">
+  	<div class="form-group form-inline">
+		<p class="h3"> Pregunta: <%= quiz.pregunta %> </p>
+		</br>
+		<input type = "text" name="respuesta" placeholder="Responda aquí" id="resp" class="form-control"/>
+		<input type="submit" value="Enviar" class="btn btn-success"/>
+	</div>
+</form>
+
+<p><a href="/quizes/<%= quiz.id %>/comments/new"><button class="btn btn-default"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Nuevo comentario </button></a></p>
+
+<p><strong>Comentarios</strong></p>
+<%for(index in quiz.Comments){ %>
+	<% if (quiz.Comments[index].publicado || session.user) { %>
+		<form method="POST" action="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish" class="form-inline">
+			<span>- <%=quiz.Comments[index].texto%></span>
+			<% if (session.user && !quiz.Comments[index].publicado) { %>
+				<button class="btn btn-default" type="submit"> Publicar <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a>
+			<% } %>
+		</form>
+	<% } %>
+<%}%>

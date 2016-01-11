@@ -1,0 +1,15 @@
+<div class="panel panel-default width50 center-block">
+  <div class="panel-heading">
+   	<h3 class="panel-title">Estadísticas de la Aplicación</h3>
+  </div>
+  <div class="panel-body">
+  	<ul>
+  		<li>Numero de Quizes: <%= statistics.quiz.number %></li>
+		<li>Comentarios Totales: <%= statistics.comments.number %></li>
+		<li>Media Comentarios por Quiz: <%= statistics.comments.average %></li>
+		<li>Quizes aún no comentadas: <%= statistics.quiz.widthoutComments %></li>
+		<li>Quizes comentadas: <%= statistics.quiz.widthComments %></li>
+	</ul>
+  </div>
+</div>
+
